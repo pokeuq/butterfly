@@ -81,7 +81,7 @@ body {
   font-family: 'Kalam', cursive;
 }
 .text{
-  padding: 4rem 5rem;
+  padding: 0rem 5rem;
   line-height: 150%;
   text-align: justify;
 }
@@ -122,7 +122,7 @@ body {
   .text{
     font-size: 1.5rem;
     line-height: 150%;
-    padding: 4rem 2.5rem;
+    padding: 0rem 2.5rem;
   }
  }
 
