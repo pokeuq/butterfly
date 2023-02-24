@@ -1,0 +1,398 @@
+:root {
+  --text: #2b3044;
+  --line: #bbc1e1;
+  --line-active: hotpink;
+
+  --dark: rgb(20, 20, 20);
+  --yellow: rgb(253, 216, 53);
+  --blue: rgb(98, 0, 234);
+  
+  --c1: rgb(96, 87, 204);
+  --c2: rgb(222, 217, 115);
+  
+  --left-color: var(--c1);
+  --right-color: var(--c2);
+
+  --purple: rgb(123, 31, 162);
+  --violet: rgb(103, 58, 183);
+  --pink: rgb(244, 143, 177);
+
+  --bgcolor: rgb(10, 10, 10);
+}
+@font-face {
+  font-family: 'Shegisha';
+  src: 
+        url('../fonts/Shegisha.woff2') format('woff2'),
+        url('../fonts/Shegisha.otf') format('otf'),
+        url('../fonts/Shegisha.ttf') format('truetype'); 
+  font-weight: normal;
+}
+@font-face {
+  font-family: 'MondayMood';
+  src: 
+      url('../fonts/MondayMood.otf') format('otf'),
+      url('../fonts/MondayMood.ttf') format('ttf');
+  font-weight: normal;
+}
+@font-face {
+  font-family: 'Navycula';
+  src: 
+      url('../fonts/NavyculaFont-Bold.otf') format('otf'),
+      url('../fonts/NavyculaFont-Bold.ttf') format('ttf');
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: 'Royce';
+  src: url('../fonts/Royce-Bold.otf') format('otf'),
+     url('../fonts/Royce-Extrabold.otf') format('otf'),
+     url('../fonts/Royce-Medium.otf') format('otf'),
+     url('../fonts/Royce-Regular.otf') format('otf');
+  font-style: normal;
+  font-weight: normal;
+}
+@font-face {
+  font-family: 'Mohr';
+  src: url('../fonts/MohrRegular.otf') format('otf'),
+  url('../fonts/Latinotype\ -\ Mohr\ Alt\ Black.otf') format('otf'),
+  url('../fonts/Latinotype\ -\ Mohr\ Alt\ Regular.otf') format('otf');
+  font-style: normal;
+  font-weight: normal;
+}
+@font-face {
+  font-family: 'Karelly';
+  src: 
+  url('../fonts/Karelly.otf') format('otf'),
+  url('../fonts/Karelly.ttf') format('ttf');
+  font-style: normal;
+  font-weight: normal;
+}
+body {
+  min-height 100vh;
+  background-color: rgb(10, 10, 10);
+  display: grid;
+  height: 100vh;
+  overflow: hidden;
+  place-items: center;
+}
+.wrapper{
+  font-size: 4rem;
+  /* font-family: 'Satisfy', cursive; */
+  font-family: 'Kalam', cursive;
+}
+.text{
+  padding: 4rem 5rem;
+  line-height: 150%;
+  text-align: justify;
+}
+.garden{
+  font-family:'Royce','Kalam', cursive ;
+ }
+ @media only screen and (min-width: 1400px){
+  .text{
+    width: 70vw;
+  }
+  
+ }
+ @media only screen and (max-width: 1000px){
+  .nav-link{
+    display: none;
+  }
+  .text{
+    font-size: 3rem;
+    line-height: 140%;
+  }
+  .text a svg {
+    transform: translate(-50%, 7px) translateZ(0) scale(2);
+  }
+}
+@media only screen and (min-width: 1000px){
+  .hidden{
+    display: none;
+  }
+ }
+@media only screen and (max-width: 600px){
+  
+  .text{
+    font-size: 2rem;
+    line-height: 130%;
+  }
+ }
+ @media only screen and (max-width: 510px){
+  .text{
+    font-size: 1.5rem;
+    line-height: 150%;
+    padding: 4rem 2.5rem;
+  }
+ }
+
+ /* stars */
+
+ 
+@keyframes background-pan {
+  from {
+    background-position: 0% center;
+  }
+  
+  to {
+    background-position: -200% center;
+  }
+}
+
+@keyframes scale {
+  from, to {
+    transform: scale(0);
+  }
+  
+  50% {
+    transform: scale(1);
+  }
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  
+  to {
+    transform: rotate(180deg);
+  }
+}
+
+
+
+h1 {
+  color: white;
+  font-weight: 600;
+  transition: all 300ms ease;
+	width: fit-content;
+	cursor: pointer;
+  
+}
+/*  */
+.nav-link{
+  display: inline-block;
+}
+h2 {
+  font-weight: 600;
+  position: relative;
+  display: inline-block;
+  transition: all 300ms ease;
+	width: fit-content;
+}
+h2:hover {
+	transform: skew(10deg);
+}
+h2::before {
+	content: attr(data-name);
+	position: absolute;
+	top: 0;
+	left: -20px;
+	background: var(--bgcolor);
+	height: 3rem;
+	overflow: hidden;
+	transition: all 300ms ease;
+	padding-left: 20px;
+}
+h2:hover::before {
+	top: -3px;
+	left: 0px;
+	color: hotpink;
+}
+
+h2::after {
+	content: "";
+	height: 2px;
+	width: 0;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	background: hotpink;
+	transition: all 300ms ease;
+}
+h2:hover::after {
+	width: 110%;
+	outline: 5px solid rgb(2, 0, 36);
+}
+/*  */
+
+
+h1 > .magic {
+  display: inline-block;
+  position: relative;
+}
+
+h1 > .magic > .magic-star {
+  --size: clamp(20px, 1.5vw, 30px);
+  
+  animation: scale 1.5s ease forwards;
+  display: block;
+  height: var(--size);
+  left: var(--star-left);
+  position: absolute;
+  top: var(--star-top);
+  width: var(--size);
+}
+
+h1 > .magic > .magic-star > svg {
+  animation: rotate 1.5s linear infinite;
+  display: block;
+  opacity: 0.7;
+}
+
+h1 > .magic > .magic-star > svg > path {
+  fill: var(--violet);
+}
+
+h1 > .magic > .magic-text {
+  animation: background-pan 3s linear infinite;
+  background: linear-gradient(
+    to right,
+    var(--purple),
+    var(--violet),
+    var(--pink),
+    var(--purple)
+  );
+  background-size: 200%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  white-space: nowrap;
+}
+
+.garden{
+  position: relative;
+	top: -8px;
+  transition: all 0.125s;
+  text-shadow: 0px 1px 0px #743980, 0px 2px 0px #743980, 0px 3px 0px #743980,
+		0px 4px 0px #743980, 0px 5px 0px #743980, 0px 6px 0px #743980,
+		0px 7px 0px #743980, 0px 8px 5px #743980;
+}
+.garden:hover{
+  top: 0px;
+	text-shadow: 0px 0px 0px #743980, 0px 0px 0px #743980, 0px 0px 0px #743980,
+		0px 0px 0px #743980, 0px 0px 0px #743980, 0px 0px 0px #743980,
+		0px 0px 0px #743980, 0px 0px 0px #743980;
+}
+.text span{
+  transition: 0.15s;
+}
+.ILU:hover{
+  color: #EA738DFF;
+}
+
+
+.text{
+}
+.text a {
+  display: inline-block;
+  position: relative;
+  text-decoration: none;
+  color: inherit;
+  margin: 0 var(--spacing, 0px);
+  transition: margin 0.25s;
+}
+.text a svg {
+  width: 76px;
+  height: 42px;
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translate(-50%, -21px) translateZ(0) scale(2.3);
+  fill: none;
+  stroke: var(--stroke, var(--line));
+  stroke-linecap: round;
+  stroke-width: 1.5px;
+  stroke-dasharray: var(--offset, 69px) 278px;
+  stroke-dashoffset: 361px;
+  transition: stroke 0.25s ease var(--stroke-delay, 0s), stroke-dasharray 0.35s;
+}
+.text a:hover {
+  --spacing: 4px;
+  --stroke: var(--line-active);
+  --stroke-delay: 0.1s;
+  --offset: 180px;
+}
+html {
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+}
+* {
+  box-sizing: inherit;
+}
+*:before, *:after {
+  box-sizing: inherit;
+}
+
+
+@media only screen and (max-width: 1000px){
+  .garden{
+    position: relative;
+    top: -8px;
+    transition: all 0.125s;
+    text-shadow: 0px 1px 0px #743980, 0px 2px 0px #743980, 0px 2px 0px #743980,
+      0px 3px 0px #743980, 0px 4px 0px #743980, 0px 5px 0px #743980,
+      0px 6px 0px #743980, 0px 5px 4px #743980;
+  }
+  .text a svg {
+    transform: translate(-50%, -12px) translateZ(0) scale(1.6);
+  }
+}
+@media only screen and (max-width: 600px){
+  .garden{
+    
+    position: relative;
+    top: -8px;
+    transition: all 0.125s;
+    text-shadow: 0px 1px 0px #743980, 0px 2px 0px #743980, 0px 2px 0px #743980,
+      0px 4px 0px #743980, 0px 3px 0px #743980, 0px 4px 0px #743980,
+      0px 5px 0px #743980, 0px 4px 3px #743980;
+  }
+
+  .text a svg {
+    transform: translate(-50%, 1px) translateZ(0) scale(1.1);
+  }
+ }
+ @media only screen and (max-width: 510px){
+  .text a svg {
+    transform: translate(-50%, 4px) translateZ(0) scale(0.9);
+  }
+ }
+ .magic-text{
+  font-family: 'Satisfy', cursive;
+ }
+ 
+ 
+
+ .btn{
+  display: inline-block;
+ }
+ .hover-line-animation{
+  position: relative;
+ }
+ .hover-line-animation:after {
+  z-index: 1;
+  content: "";
+  position: absolute;
+  width: 105%;
+  transform: scaleX(0);
+  height: 0.4rem;
+  top: 45%;
+  left: -5%;
+  background-color: #7848d6;
+  transform-origin:  right;
+  transition: transform 0.4s ease-out;
+  border-radius: 50px;
+}
+.btn:hover .hover-line-animation:after {
+  transform: scaleX(1);
+  transform-origin:  left;
+}
+.odd{
+  position: relative;
+  z-index: 0;
+}
+.odd{
+  position: relative;
+  z-index: 2;
+}
