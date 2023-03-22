@@ -81,13 +81,15 @@ body {
   font-family: 'Kalam', cursive;
 }
 .text{
-  padding: 0rem 5rem;
+  padding: 4rem 5rem;
   line-height: 150%;
   text-align: justify;
 }
 .garden{
   font-family:'Royce','Kalam', cursive ;
  }
+
+
  @media only screen and (min-width: 1400px){
   .text{
     width: 70vw;
@@ -107,6 +109,8 @@ body {
   }
 }
 @media only screen and (min-width: 1000px){
+
+  
   .hidden{
     display: none;
   }
@@ -122,7 +126,7 @@ body {
   .text{
     font-size: 1.5rem;
     line-height: 150%;
-    padding: 0rem 2.5rem;
+    padding: 4rem 2.5rem;
   }
  }
 
@@ -396,3 +400,87 @@ html {
   position: relative;
   z-index: 2;
 }
+
+
+
+
+
+.wrapper .icon {
+    bottom: 2rem;
+    position: fixed;
+    background: #ffffff;
+    border-radius: 50%;
+    padding: 15px;
+    margin-left: 2rem;
+    width: 50px;
+    height: 50px;
+    font-size: 18px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: all 0.2s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  }
+  
+  @media only screen and (min-width: 1400px) {
+    .wrapper .icon {
+      bottom: 2rem;
+      left: 0rem;
+      
+    }
+   }
+   
+
+  .wrapper .tooltip {
+    position: absolute;
+    top: 0;
+    font-size: 14px;
+    background: #ffffff;
+    color: #ffffff;
+    padding: 5px 8px;
+    border-radius: 5px;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  }
+  
+  .wrapper .tooltip::before {
+    position: absolute;
+    content: "";
+    height: 8px;
+    width: 8px;
+    background: #ffffff;
+    bottom: -3px;
+    left: 50%;
+    transform: translate(-50%) rotate(45deg);
+    transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  }
+  
+  .wrapper .icon:hover .tooltip {
+    top: -45px;
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+  }
+  
+  .wrapper .icon:hover span,
+  .wrapper .icon:hover .tooltip {
+    text-shadow: 0px -1px 0px rgba(0, 0, 0, 0.1);
+  }
+
+  .wrapper .twitter:hover,
+  .wrapper .twitter:hover .tooltip,
+  .wrapper .twitter:hover .tooltip::before {
+    background: #1DA1F2;
+    color: #ffffff;
+  }
+  path{
+    transition: .5s;
+  }
+.icon:hover path{
+    fill:white;
+}
+  
